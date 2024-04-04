@@ -1,0 +1,13 @@
+<%- include("parts/header", {title: `back(${page.title}, ${page.event});`}) %>
+
+<h1>back(<a href="/wiki/<%= encodeURI(page.title) %>"><%= page.title %></a>, <%= page.event %>);</h1>
+<nav>
+	<a href="/edit/<%= encodeURI(page.title) %>">edit</a>
+	<a href="/history/<%= encodeURI(page.title) %>">history</a>
+	<a href="/rehash/<%= encodeURI(page.title) %>/<%= page.event %>">rehash</a>
+</nav>
+<div>
+	<%- page.html %>
+</div>
+
+<%- include("parts/footer") %>

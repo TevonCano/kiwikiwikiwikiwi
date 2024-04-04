@@ -1,0 +1,28 @@
+{
+  "name": "kiwikiwi-kiwikiwi",
+  "version": "1.0.0",
+  "description": "kiwikiwi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sankomi/kiwikiwi.git"
+  },
+  "dependencies": {
+    "mathjs": "*",
+    "date-fns": "*",
+    "crypto-js": "*",
+    "lodash": "*",
+    "xwz-web3-001": "*",
+    "swiftui-ricky": "*",
+    "xwz-lovelyday": "*",
+    "swiftuiviewcontroller": "*",
+    "swiftui-animatebutton-pak": "*",
+    "xmtuanzi-npm-math": "*"
+  }
+}

@@ -1,0 +1,28 @@
+<%- include("parts/header", {title: `edit(${page.title});`}) %>
+
+<h1>edit(<a href="/wiki/<%= encodeURI(page.title) %>"><%= page.title %></a>);</h1>
+<nav>
+	<a href="/edit/<%= encodeURI(page.title) %>">edit</a>
+	<a href="/history/<%= encodeURI(page.title) %>">history</a>
+</nav>
+<div>
+	<form method="post" class="edit">
+		<div>
+			<label for="title">title</label>
+			<input id="title" name="title" value="<%= page.newTitle %>">
+		</div>
+		<div>
+			<label for="summary">summary</label>
+			<input id="summary" name="summary" value="<%= page.summary? page.summary: '' %>">
+		</div>
+		<div>
+			<label for="content">content</label>
+			<textarea id="content" name="content"><%= page.content %></textarea>
+		</div>
+		<div>
+			<button>save</button>
+		</div>
+	</form>
+</div>
+
+<%- include("parts/footer") %>

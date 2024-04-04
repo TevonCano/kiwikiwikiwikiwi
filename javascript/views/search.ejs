@@ -1,0 +1,39 @@
+<%- include("parts/header", {title: !string || string === ""? "search();": `search(${string}, ${current});`}) %>
+
+<% if (!string || string === "") { %>
+<h1>search();</h1>
+<% } else { %>
+<h1>search(<%= string %>, <%= current %>);</h1>
+<% } %>
+<% if (pages && pages.length > 0) { %>
+<ul>
+	<% for (let page of pages) { %>
+	<li>
+		<h2>
+			<a href="/wiki/<%= encodeURI(page.title) %>"><%= page.title %></a>
+		</h2>
+		<% if (page.text.length > 100) { %>
+		<p><%= page.text.substring(0, 100) %>...</p>
+		<% } else { %>
+		<p><%= page.text %></p>
+		<% } %>
+	</li>
+	<% } %>
+</ul>
+<div>
+	<% if (current > 1 && current <= last) { %>
+	<a href="/search?s=<%= string %>&p=<%= current - 1 %>">prev</a>
+	<% } else { %>
+	<span><del>prev</del></span>
+	<% } %>
+	<% if (current >= 0 && current < last) { %>
+	<a href="/search?s=<%= string %>&p=<%= current + 1 %>">next</a>
+	<% } else { %>
+	<span><del>next</del></span>
+	<% } %>
+</div>
+<% } else { %>
+<p>no pages found</p>
+<% } %>
+
+<%- include("parts/footer") %>
